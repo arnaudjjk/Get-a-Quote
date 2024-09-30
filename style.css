@@ -24,8 +24,8 @@ html, body {
     padding: 40px;
     border-radius: 25px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 500px;
+    width: 80%; /* Increase width to 80% of the screen */
+    max-width: 1200px; /* Limit the maximum width to 1200px */
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -49,21 +49,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 1; /* Ensure the opacity is set to 1 for visibility */
-    transition: opacity 0.5s ease, transform 0.3s ease; /* Smooth transition */
-}
-
-
-/* Keyframes for sliding in animation */
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.3s ease;
 }
 
 /* Progress Bar Container */
@@ -185,10 +172,4 @@ body.dark-mode {
     margin-bottom: 10px;
     color: #00796b;
     font-size: 1.5rem;
-}
-.commentbox {
-    margin-top: 20px;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
 }
