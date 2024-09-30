@@ -9,25 +9,25 @@ let quotes = [
     "You have within you right now, everything you need to deal with whatever the world can throw at you."
 ];
 
-// Function to change quotes every 10 seconds
+// Function to display a random quote and change it live
 function changeQuote() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const quoteBox = document.getElementById('quote');
-    quoteBox.style.opacity = '0'; // Fade out
+    quoteBox.style.opacity = '0'; // Fade out the old quote
     setTimeout(() => {
-        quoteBox.innerText = quotes[randomIndex]; // Update the quote
-        quoteBox.style.opacity = '1'; // Fade in
-    }, 500); // Wait 500ms before changing the quote
+        quoteBox.innerText = quotes[randomIndex]; // Change the quote text
+        quoteBox.style.opacity = '1'; // Fade in the new quote
+    }, 500); // Half-second delay for the fade-out effect
 }
 
-// Function to display a quote on page load
+// Display the first quote when the page loads
 function displayInitialQuote() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const quoteBox = document.getElementById('quote');
-    quoteBox.innerText = quotes[randomIndex]; // Show the first quote
+    quoteBox.innerText = quotes[randomIndex]; // Show the first quote immediately
 }
 
-// Toggle dark mode and save preference to localStorage
+// Toggle dark mode and save the preference in localStorage
 function toggleDarkMode() {
     const isDarkMode = document.body.classList.toggle('dark-mode');
     document.querySelector('.container').classList.toggle('dark-mode');
@@ -35,7 +35,7 @@ function toggleDarkMode() {
     localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
 }
 
-// Load dark mode preference on page load
+// Load the dark mode preference from localStorage
 function loadDarkModePreference() {
     const darkMode = localStorage.getItem('darkMode');
     if (darkMode === 'enabled') {
@@ -46,9 +46,9 @@ function loadDarkModePreference() {
     }
 }
 
-// Run this function once the DOM is fully loaded
+// Initialize the page by loading dark mode preference and showing the first quote
 window.addEventListener('DOMContentLoaded', (event) => {
-    loadDarkModePreference();  // Load dark mode preference
-    displayInitialQuote();     // Show the first quote on page load
-    setInterval(changeQuote, 10000);  // Change quotes every 10 seconds
+    loadDarkModePreference();   // Load dark mode
+    displayInitialQuote();      // Show the first quote
+    setInterval(changeQuote, 10000); // Change the quote every 10 seconds
 });
