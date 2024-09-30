@@ -1,7 +1,6 @@
 /* General Styling */
 body {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #330066, #4b0082); /* Deep, smooth dark purple gradient */
     color: #fff;
     display: flex;
     justify-content: center;
@@ -10,19 +9,30 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
+    background: linear-gradient(135deg, #000033, #330066); /* Dark gradient background */
+    animation: moveBg 10s infinite alternate; /* Moving background animation */
+}
+
+@keyframes moveBg {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 html, body {
     height: 100%;
     width: 100%;
-    overflow: hidden;
 }
 
 /* Container Styling */
 .container {
     display: flex;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.15); /* Transparent white background */
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent white background */
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
@@ -46,6 +56,7 @@ h1 {
     font-size: 2.5rem;
     text-align: center;
     font-weight: 700;
+    color: #ffffff;
 }
 
 .quote-box {
@@ -131,6 +142,7 @@ h1 {
     margin-bottom: 15px;
     text-align: center;
     font-size: 1.4rem;
+    color: #fff;
 }
 
 .comment-section ul {
