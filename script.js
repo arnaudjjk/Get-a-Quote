@@ -38,8 +38,13 @@ function resetProgressBar() {
     const progressBar = document.getElementById('progress-bar');
     progressBar.style.width = '100%'; // Reset to full width
     setTimeout(() => {
-        progressBar.style.width = '0%'; // Animate to empty over 30 seconds
-    }, 100); // Slight delay for smoother animation start
+        progressBar.style.transition = 'none'; // Disable transition to instantly reset
+        progressBar.style.width = '0%'; // Animate to 0% over 30 seconds
+        setTimeout(() => {
+            progressBar.style.transition = 'width 30s linear'; // Re-enable transition for the next cycle
+            progressBar.style.width = '100%'; // Start the progress bar animation
+        }, 100); // Delay before resetting animation
+    }, 100); // Slight delay to ensure the animation restarts
 }
 
 // Display the first quote and background on page load
