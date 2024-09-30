@@ -49,10 +49,10 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0; /* Start hidden */
-    animation: slideIn 1s forwards; /* Slide in animation */
+    opacity: 1; /* Ensure the opacity is set to 1 for visibility */
     transition: opacity 0.5s ease, transform 0.3s ease; /* Smooth transition */
 }
+
 
 /* Keyframes for sliding in animation */
 @keyframes slideIn {
