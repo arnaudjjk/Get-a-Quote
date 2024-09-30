@@ -1,77 +1,78 @@
 /* General Styling */
 body {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #2d0057, #4b0082); /* Dark Purple Theme */
-    color: #fff; /* White text for contrast */
+    background: linear-gradient(135deg, #330066, #4b0082); /* Deep, smooth dark purple gradient */
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     box-sizing: border-box;
 }
 
 html, body {
     height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 
 /* Container Styling */
 .container {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.7); /* Transparent dark background */
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.15); /* Transparent white background */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+    width: 90%;
+    max-width: 1100px;
+    height: 80%;
     gap: 30px;
 }
 
-/* Main Content Section (left) */
+/* Main Content Section */
 .main-content {
-    flex: 1;
+    flex: 0 0 65%; /* 65% for main content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* Quote Section */
 h1 {
-    margin-bottom: 15px;
-    font-size: 2.4rem;
-    color: #fff; /* White text for better visibility */
-    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
     text-align: center;
+    font-weight: 700;
 }
 
 .quote-box {
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent white */
-    padding: 25px;
-    margin-bottom: 20px;
-    border-radius: 18px;
-    font-size: 1.6rem;
-    color: #fff; /* White text */
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
     text-align: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #fff;
 }
 
 /* Progress Bar */
 #progress-bar-container {
     width: 100%;
-    background-color: #ddd;
-    border-radius: 25px;
-    height: 10px;
-    margin-top: 20px;
-    position: relative;
-    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    height: 8px;
+    margin: 20px 0;
 }
 
 #progress-bar {
     width: 0%;
     height: 100%;
-    background-color: #4b0082; /* Dark Purple */
-    transition: none;
+    background-color: #bb33ff; /* Light purple for progress bar */
+    transition: width 30s linear;
 }
 
 /* Support Section (Donation & Visitor Count) */
@@ -89,86 +90,84 @@ h1 {
 }
 
 .donation-btn {
-    background-color: #4b0082; /* Dark Purple button for donation */
+    background-color: #bb33ff;
     color: white;
     text-decoration: none;
-    padding: 12px 30px;
-    border-radius: 50px;
+    padding: 10px 20px;
+    border-radius: 30px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 10px;
 }
 
 .donation-btn:hover {
-    background-color: #360060; /* Darker purple on hover */
+    background-color: #9922cc;
     transform: translateY(-3px);
 }
 
 .visitor-counter {
-    padding: 10px;
+    padding: 15px;
     background-color: rgba(255, 255, 255, 0.2); /* Transparent white background */
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 .visitor-counter h3 {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     color: #fff;
     font-size: 1.2rem;
 }
 
-/* Comment Section (right) */
+/* Comment Section */
 .comment-section {
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent white for aesthetic */
+    background-color: rgba(255, 255, 255, 0.15);
     padding: 20px;
-    border-radius: 20px;
-    width: 35%;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    width: 30%;
 }
 
 .comment-section h3 {
-    text-align: center;
     margin-bottom: 15px;
-    color: #fff;
+    text-align: center;
+    font-size: 1.4rem;
 }
 
 .comment-section ul {
     list-style-type: none;
     padding: 0;
-    max-height: 200px; /* Fixed height for comment section */
-    overflow-y: auto; /* Scrollable comments */
-    color: #fff; /* White text for comments */
+    margin-bottom: 20px;
+    max-height: 150px;
+    overflow-y: scroll;
 }
 
 .comment-section ul li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    color: #fff; /* White text for comments */
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
 }
 
 .comment-section textarea {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
     border-radius: 10px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    margin-bottom: 10px;
 }
 
 .comment-section button {
     width: 100%;
     padding: 10px;
-    background-color: #4b0082; /* Dark Purple */
+    background-color: #bb33ff;
     color: white;
     border: none;
     border-radius: 10px;
-    cursor: pointer;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .comment-section button:hover {
-    background-color: #360060; /* Darker purple hover */
+    background-color: #9922cc;
 }
