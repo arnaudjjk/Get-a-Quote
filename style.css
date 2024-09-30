@@ -37,8 +37,8 @@ h1 {
     font-weight: 700;
 }
 
-/* Compliment Box */
-.compliment-box {
+/* Quote Box */
+.quote-box {
     background-color: #f8f9fa;
     padding: 25px;
     margin-bottom: 30px;
@@ -63,7 +63,7 @@ body.dark-mode {
     color: #fff;
 }
 
-.compliment-box.dark-mode {
+.quote-box.dark-mode {
     background-color: #444;
     color: #fff;
 }
@@ -114,25 +114,6 @@ body.dark-mode {
     margin-left: 10px;
     font-size: 1.2rem;
     color: #4a90e2;
-}
-
-/* Submission Section */
-.submission-section {
-    margin-top: 20px;
-}
-
-.submission-section input {
-    padding: 12px;
-    border: 2px solid #ccc;
-    border-radius: 50px;
-    width: 80%;
-    margin-bottom: 15px;
-    outline: none;
-    transition: border 0.3s ease;
-}
-
-.submission-section input:focus {
-    border-color: #4a90e2;
 }
 
 /* Visitor Counter Styling */
