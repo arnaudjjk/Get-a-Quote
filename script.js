@@ -1,15 +1,9 @@
-let quotes = [
-    "The best way to predict the future is to create it.",
-    "Don't watch the clock; do what it does. Keep going.",
-    "Success is not how high you have climbed, but how you make a positive difference to the world.",
-    "The only limit to our realization of tomorrow is our doubts of today.",
-    "The purpose of our lives is to be happy.",
-    "Life is what happens when you're busy making other plans.",
-    "Get busy living or get busy dying.",
-    "You have within you right now, everything you need to deal with whatever the world can throw at you."
-];
+// Dark mode toggle
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
 
-// Function to load comments from local storage
+// Load comments from local storage
 function loadComments() {
     const savedComments = localStorage.getItem('comments');
     const commentList = document.getElementById('commentList');
@@ -23,39 +17,24 @@ function loadComments() {
     }
 }
 
-// Function to add a new comment
+// Add new comment
 function addComment() {
     const commentInput = document.getElementById('commentInput');
     const commentList = document.getElementById('commentList');
     const newComment = commentInput.value.trim();
 
     if (newComment) {
-        // Add the new comment to the list
         const li = document.createElement('li');
         li.textContent = newComment;
         commentList.appendChild(li);
 
-        // Save the comment in local storage
         const savedComments = localStorage.getItem('comments');
         const comments = savedComments ? JSON.parse(savedComments) : [];
         comments.push(newComment);
         localStorage.setItem('comments', JSON.stringify(comments));
 
-        // Clear the input field
         commentInput.value = '';
     }
 }
 
-// Function to toggle dark mode
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-}
-
-// Load the initial comments and quote when the page loads
-document.addEventListener('DOMContentLoaded', function() {
-    loadComments();
-
-    // Show a random quote on page load
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    document.getElementById('quote').innerText = quotes[randomIndex];
-});
+document.addEventListener('DOMContentLoaded', loadComments);
