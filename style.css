@@ -82,7 +82,7 @@ h1 {
     width: 100%;
     height: 100%;
     background-color: #4a90e2;
-    transition: width 10s linear;
+    transition: width 30s linear; /* Smooth transition for 30 seconds */
 }
 
 /* Dark Mode Styling */
