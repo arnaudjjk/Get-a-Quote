@@ -33,15 +33,14 @@ function changeQuote() {
     }, 500); // 500ms delay for smooth transition
 }
 
-// Function to animate and reset the progress bar for each quote
+// Function to animate the progress bar
 function resetProgressBar() {
     const progressBar = document.getElementById('progress-bar');
-    progressBar.style.transition = 'none'; // Remove transition to reset
-    progressBar.style.width = '0%'; // Reset to 0%
+    progressBar.style.width = '100%'; // Reset to full width
     setTimeout(() => {
-        progressBar.style.transition = 'width 30s linear'; // Add back transition for 30 seconds
-        progressBar.style.width = '100%'; // Animate back to full width
-    }, 100); // Delay before restarting the animation
+        progressBar.style.transition = 'width 30s linear'; // Animate from full to 0% over 30 seconds
+        progressBar.style.width = '0%'; // Animate progress bar
+    }, 100); // Slight delay to ensure smooth animation
 }
 
 // Display the first quote and background on page load
