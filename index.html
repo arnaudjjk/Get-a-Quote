@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compliment Generator</title>
+    <title>Daily Quotes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Your Daily Compliment</h1>
+        <h1>Quote of the Moment</h1>
 
-        <!-- Compliment Display -->
-        <div id="compliment" class="compliment-box">Compliments will appear here every 10 seconds!</div>
+        <!-- Quote Display -->
+        <div id="quote" class="quote-box">Quotes will appear here every 10 seconds!</div>
 
         <!-- Dark Mode Toggle Button -->
         <div class="dark-mode-toggle">
@@ -20,13 +20,6 @@
                 <span class="toggle-circle"></span>
             </label>
             <span class="toggle-text">Dark Mode</span>
-        </div>
-
-        <!-- Compliment Submission -->
-        <div class="submission-section">
-            <h2>Submit Your Own Compliment</h2>
-            <input type="text" id="customCompliment" placeholder="Write your compliment here...">
-            <button class="submit-btn" onclick="submitCompliment()">Submit</button>
         </div>
 
         <!-- Donation Button -->
@@ -42,7 +35,7 @@
         </div>
     </div>
 
-    <audio id="complimentSound" src="compliment.mp3" preload="auto"></audio> <!-- Sound effect -->
+    <audio id="quoteSound" src="quote.mp3" preload="auto"></audio> <!-- Sound effect -->
     <script src="script.js"></script>
 </body>
 </html>
