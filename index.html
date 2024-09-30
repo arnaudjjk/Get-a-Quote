@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Updated Quote of the Moment</title>
+    <title>Quote of the Moment</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Updated Quote of the Moment</h1>
-        <div id="quote" class="quote-box">Your quote will appear here every 30 seconds</div>
+        <h1>Quote of the Moment</h1>
+
+        <!-- Quote Display -->
+        <div id="quote" class="quote-box"></div>
+
+        <!-- Progress Bar -->
         <div id="progress-bar-container">
             <div id="progress-bar"></div>
         </div>
+
         <!-- Dark Mode Toggle Button -->
         <div class="dark-mode-toggle">
             <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
@@ -21,16 +26,30 @@
             </label>
             <span class="toggle-text">Dark Mode</span>
         </div>
+
+        <!-- Donation Button -->
         <div class="donation-section">
             <h2>Support Us</h2>
             <a href="https://paypal.me/NArnau?country.x=CA&locale.x=en_US" target="_blank" class="donation-btn">Donate via PayPal</a>
         </div>
+
+        <!-- Visitor Counter Section -->
         <div id="visitor-counter" class="visitor-counter">
             <h3>Visitor Count:</h3>
             <script type="text/javascript" src="//counter.websiteout.com/js/5/0/0/0"></script>
         </div>
+
+        <!-- Comment Section -->
+        <div class="commentbox"></div>
+        <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+        <script>
+            commentBox('5739362742435840-proj', {
+                className: 'commentbox'
+            });
+        </script>
+
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Ensure the script is linked -->
 </body>
 </html>
