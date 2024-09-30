@@ -9,7 +9,6 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
@@ -28,7 +27,6 @@ html, body {
     width: 90%;
     max-width: 500px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 20px;
 }
 
 /* Heading Styling */
@@ -39,30 +37,19 @@ h1 {
     font-weight: 700;
 }
 
-/* Button Styling */
-.generate-btn, .submit-btn, .donation-btn {
-    background-color: #4a90e2;
-    color: #fff;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-family: 'Rubik', sans-serif;
-    font-size: 1.4rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    margin: 15px 0; /* Add spacing between buttons */
-}
-
-.generate-btn:hover, .submit-btn:hover, .donation-btn:hover {
-    background-color: #357abd;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-}
-
-.generate-btn:active, .submit-btn:active, .donation-btn:active {
-    transform: translateY(2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Compliment Box */
+.compliment-box {
+    background-color: #f8f9fa;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 18px;
+    font-size: 1.6rem;
+    color: #666;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, transform 0.3s ease;
 }
 
 /* Dark Mode Styling */
@@ -76,12 +63,9 @@ body.dark-mode {
     color: #fff;
 }
 
-.generate-btn.dark-mode, .submit-btn.dark-mode, .donation-btn.dark-mode {
-    background-color: #357abd;
-}
-
-.generate-btn.dark-mode:hover, .submit-btn.dark-mode:hover, .donation-btn.dark-mode:hover {
-    background-color: #1d6aa5;
+.compliment-box.dark-mode {
+    background-color: #444;
+    color: #fff;
 }
 
 /* Dark Mode Toggle Button */
@@ -164,47 +148,4 @@ body.dark-mode {
     margin-bottom: 10px;
     color: #00796b;
     font-size: 1.5rem;
-}
-
-/* Modal Styling */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 25px;
-    text-align: center;
-    width: 350px;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 0.3s ease;
-}
-
-/* Modal Text Styling */
-.modal-content p {
-    font-size: 1.5rem;
-    margin: 0;
-    color: #333;
-}
-
-/* Modal Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
