@@ -17,7 +17,7 @@ let backgrounds = [
     'linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)', // Subtle gray gradient
 ];
 
-// Function to change quotes and background every 10 seconds
+// Function to change quotes and background every 30 seconds
 function changeQuote() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const randomBackground = Math.floor(Math.random() * backgrounds.length);
@@ -38,7 +38,7 @@ function resetProgressBar() {
     const progressBar = document.getElementById('progress-bar');
     progressBar.style.width = '100%'; // Reset to full width
     setTimeout(() => {
-        progressBar.style.width = '0%'; // Animate to empty over 10 seconds
+        progressBar.style.width = '0%'; // Animate to empty over 30 seconds
     }, 100); // Slight delay for smoother animation start
 }
 
@@ -81,5 +81,5 @@ window.addEventListener('DOMContentLoaded', () => {
     setInterval(() => {
         changeQuote();
         resetProgressBar();     // Reset progress bar with every new quote
-    }, 10000); // Change quote and background every 10 seconds
+    }, 30000); // Change quote and background every 30 seconds
 });
