@@ -50,5 +50,5 @@ function loadDarkModePreference() {
 window.addEventListener('DOMContentLoaded', (event) => {
     loadDarkModePreference();   // Load dark mode
     displayInitialQuote();      // Show the first quote
-    setInterval(changeQuote, 10000); // Change the quote every 10 seconds
+    setInterval(changeQuote, 20000); // Change the quote every 10 seconds
 });
