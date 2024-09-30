@@ -49,7 +49,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.5s ease, transform 0.3s ease;
+    transition: opacity 0.5s ease, transform 0.3s ease; /* Smooth transition */
 }
 
 /* Dark Mode Styling */
@@ -114,6 +114,29 @@ body.dark-mode {
     margin-left: 10px;
     font-size: 1.2rem;
     color: #4a90e2;
+}
+
+/* Donation Section Styling */
+.donation-section {
+    margin-top: 20px;
+}
+
+.donation-btn {
+    background-color: #4a90e2;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.donation-btn:hover {
+    background-color: #357abd;
+    transform: translateY(-3px);
+}
+
+.donation-btn:active {
+    transform: translateY(1px);
 }
 
 /* Visitor Counter Styling */
