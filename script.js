@@ -25,4 +25,20 @@ function updateQuote() {
         // Reset progress bar and fill over 30 seconds
         progressBar.style.transition = 'none'; // Stop transition for reset
         progressBar.style.width = '0%'; // Reset the bar to zero width
-        setTimeout
+        setTimeout(() => {
+            progressBar.style.transition = 'width 30s linear'; // Smooth transition over 30s
+            progressBar.style.width = '100%'; // Animate the progress bar to fill
+        }, 100); // Small delay for smooth reset
+    }, 30000); // Change quote every 30 seconds
+}
+
+// Initialize the first quote and progress bar
+function initQuoteUpdater() {
+    quoteElement.textContent = quotes[0]; // Start with the first quote
+    progressBar.style.width = '100%'; // Start progress bar fill
+    progressBar.style.transition = 'width 30s linear'; // Animate progress bar fill over 30s
+    updateQuote(); // Start updating the quote and progress bar
+}
+
+// Start everything when the page loads
+window.onload = initQuoteUpdater;
