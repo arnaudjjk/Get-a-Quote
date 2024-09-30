@@ -9,41 +9,39 @@
 <body>
     <div class="container">
         <!-- Main Section with Quote, Donation, Visitor Count -->
-        <div class="main-content">
-            <!-- Quote Display -->
-            <h1>Quote of the Moment</h1>
-            <div id="quote" class="quote-box">
-                "Success is not how high you have climbed, but how you make a positive difference to the world."
-            </div>
+        <div class="content-section">
+            <!-- Left Section (Quotes, Progress Bar, Buttons) -->
+            <div class="left-section">
+                <h1>Quote of the Moment</h1>
+                <div id="quote" class="quote-box">
+                    "Success is not how high you have climbed, but how you make a positive difference to the world."
+                </div>
 
-            <!-- Progress Bar -->
-            <div id="progress-bar-container">
-                <div id="progress-bar"></div>
-            </div>
+                <!-- Progress Bar -->
+                <div id="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
 
-            <!-- Support Section -->
-            <div class="support-section">
-                <!-- Donation Button -->
+                <!-- Donation and Visitor Counter -->
                 <div class="donation-section">
                     <h2>Support Us</h2>
                     <a href="https://paypal.me/NArnau?country.x=CA&locale.x=en_US" target="_blank" class="donation-btn">Donate via PayPal</a>
                 </div>
-
-                <!-- Visitor Counter Section -->
                 <div id="visitor-counter" class="visitor-counter">
                     <h3>Visitor Count:</h3>
                     <script type="text/javascript" src="//counter.websiteout.com/js/5/0/0/0"></script>
                 </div>
             </div>
+
+            <!-- Right Section (Comments) -->
+            <div class="right-section">
+                <h3>Comments:</h3>
+                <ul id="commentList"></ul>
+                <textarea id="commentInput" placeholder="Add a comment..."></textarea>
+                <button onclick="addComment()">Submit</button>
+            </div>
         </div>
 
-        <!-- Comment Section -->
-        <div class="comment-section">
-            <h3>Comments:</h3>
-            <ul id="commentList"></ul>
-            <textarea id="commentInput" placeholder="Add a comment..."></textarea>
-            <button onclick="addComment()">Submit</button>
-        </div>
     </div>
 
     <!-- Link the script to ensure quotes update properly -->
