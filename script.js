@@ -16,29 +16,29 @@ const progressBar = document.getElementById('progress-bar');
 function updateQuote() {
     let currentQuoteIndex = 0;
 
-    // Set interval for updating the quote every 30 seconds
+    // Start progress bar fill and change the quote every 30 seconds
     setInterval(() => {
         // Update the quote text
         currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
         quoteElement.textContent = quotes[currentQuoteIndex];
 
-        // Reset progress bar
-        progressBar.style.transition = 'none'; // Remove transition for reset
-        progressBar.style.width = '0%'; // Reset width
+        // Reset progress bar and fill over 30 seconds
+        progressBar.style.transition = 'none'; // Stop transition for reset
+        progressBar.style.width = '0%'; // Reset the bar to zero width
         setTimeout(() => {
-            progressBar.style.transition = 'width 30s linear'; // Reapply transition
-            progressBar.style.width = '100%'; // Fill progress bar over 30 seconds
-        }, 100); // Small delay for resetting the transition
-    }, 30000); // 30 seconds interval
+            progressBar.style.transition = 'width 30s linear'; // Smooth transition over 30s
+            progressBar.style.width = '100%'; // Animate the progress bar to fill
+        }, 100); // Small delay for smooth reset
+    }, 30000); // Change quote every 30 seconds
 }
 
-// Initialize the first quote and start progress bar animation
+// Initialize the first quote and progress bar
 function initQuoteUpdater() {
     quoteElement.textContent = quotes[0]; // Start with the first quote
-    progressBar.style.width = '100%'; // Start progress bar
-    progressBar.style.transition = 'width 30s linear'; // Animate progress bar
-    updateQuote(); // Start quote update loop
+    progressBar.style.width = '100%'; // Start progress bar fill
+    progressBar.style.transition = 'width 30s linear'; // Animate progress bar fill over 30s
+    updateQuote(); // Start updating the quote and progress bar
 }
 
-// Start the quote updating process on page load
+// Start everything when the page loads
 window.onload = initQuoteUpdater;
