@@ -1,60 +1,48 @@
-let compliments = [
-    "You have an amazing smile!",
-    "You light up the room.",
-    "You're incredibly kind.",
-    "Your creativity is inspiring!",
-    "You have a heart of gold.",
-    "You're a great listener.",
-    "Your positivity is contagious!",
-    "You make a difference in the world.",
-    "You’re more powerful than you know.",
-    "You bring out the best in people!"
+let quotes = [
+    "The best way to predict the future is to create it.",
+    "Don't watch the clock; do what it does. Keep going.",
+    "Success is not how high you have climbed, but how you make a positive difference to the world.",
+    "The only limit to our realization of tomorrow is our doubts of today.",
+    "The purpose of our lives is to be happy.",
+    "Life is what happens when you're busy making other plans.",
+    "Get busy living or get busy dying.",
+    "You have within you right now, everything you need to deal with whatever the world can throw at you."
 ];
 
-// Function to change compliments every 10 seconds
-function changeCompliment() {
-    const randomIndex = Math.floor(Math.random() * compliments.length);
-    const complimentBox = document.getElementById('compliment');
-    complimentBox.style.opacity = '0'; // Fade out
+// Function to change quotes every 10 seconds
+function changeQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const quoteBox = document.getElementById('quote');
+    quoteBox.style.opacity = '0'; // Fade out
 
     setTimeout(() => {
-        complimentBox.innerText = compliments[randomIndex];
-        complimentBox.style.opacity = '1'; // Fade in
-    }, 500); // Wait 500ms before changing the compliment
+        quoteBox.innerText = quotes[randomIndex];
+        quoteBox.style.opacity = '1'; // Fade in
+    }, 500); // Wait 500ms before changing the quote
 }
 
-// Initially display a compliment immediately on page load
-function displayInitialCompliment() {
-    const randomIndex = Math.floor(Math.random() * compliments.length);
-    const complimentBox = document.getElementById('compliment');
-    complimentBox.innerText = compliments[randomIndex];  // Display the first compliment immediately
+// Initially display a quote immediately on page load
+function displayInitialQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const quoteBox = document.getElementById('quote');
+    quoteBox.innerText = quotes[randomIndex];  // Display the first quote immediately
 }
 
-// Set the interval to change compliments every 10 seconds
-setInterval(changeCompliment, 10000);
+// Set the interval to change quotes every 10 seconds
+setInterval(changeQuote, 10000);
 
-// On window load, display the initial compliment and load dark mode preference
+// On window load, display the initial quote and load dark mode preference
 window.onload = function() {
     loadDarkModePreference();  // Load dark mode setting
-    displayInitialCompliment();  // Show the first compliment immediately
+    displayInitialQuote();  // Show the first quote immediately
 };
 
 // Toggle dark mode and save preference to localStorage
 function toggleDarkMode() {
     const isDarkMode = document.body.classList.toggle('dark-mode');
     document.querySelector('.container').classList.toggle('dark-mode');
-    document.querySelector('.compliment-box').classList.toggle('dark-mode');
+    document.querySelector('.quote-box').classList.toggle('dark-mode');
     localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-}
-
-// Submit a custom compliment
-function submitCompliment() {
-    const customCompliment = document.getElementById('customCompliment').value;
-    if (customCompliment.trim() !== "") {
-        compliments.push(customCompliment);  // Add to compliment array
-        document.getElementById('customCompliment').value = "";  // Clear input
-        alert("Thank you! Your compliment has been added.");
-    }
 }
 
 // Load dark mode preference from localStorage
@@ -63,7 +51,7 @@ function loadDarkModePreference() {
     if (darkMode === 'enabled') {
         document.body.classList.add('dark-mode');
         document.querySelector('.container').classList.add('dark-mode');
-        document.querySelector('.compliment-box').classList.add('dark-mode');
+        document.querySelector('.quote-box').classList.add('dark-mode');
         document.getElementById('darkModeToggle').checked = true;
     }
 }
