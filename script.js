@@ -23,11 +23,21 @@ function changeCompliment() {
     }, 500); // Wait 500ms before changing the compliment
 }
 
+// Initially display a compliment immediately on page load
+function displayInitialCompliment() {
+    const randomIndex = Math.floor(Math.random() * compliments.length);
+    const complimentBox = document.getElementById('compliment');
+    complimentBox.innerText = compliments[randomIndex];  // Display the first compliment immediately
+}
+
 // Set the interval to change compliments every 10 seconds
 setInterval(changeCompliment, 10000);
 
-// Initially display a compliment
-window.onload = changeCompliment;
+// On window load, display the initial compliment and load dark mode preference
+window.onload = function() {
+    loadDarkModePreference();  // Load dark mode setting
+    displayInitialCompliment();  // Show the first compliment immediately
+};
 
 // Toggle dark mode and save preference to localStorage
 function toggleDarkMode() {
@@ -57,9 +67,3 @@ function loadDarkModePreference() {
         document.getElementById('darkModeToggle').checked = true;
     }
 }
-
-// Load dark mode preference when the page loads
-window.onload = function() {
-    loadDarkModePreference();
-    changeCompliment(); // Start with a random compliment
-};
