@@ -16,19 +16,26 @@ const progressBar = document.getElementById('progress-bar');
 function updateQuote() {
     let currentQuoteIndex = 0;
 
-    // Start progress bar fill and change the quote every 30 seconds
+    // Start the quote update loop and reset progress bar every 30 seconds
     setInterval(() => {
+        // Debugging to check if quotes are being updated
+        console.log('Current Quote Index: ', currentQuoteIndex);
+        console.log('Displaying Quote: ', quotes[currentQuoteIndex]);
+
         // Update the quote text
-        currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
         quoteElement.textContent = quotes[currentQuoteIndex];
 
-        // Reset progress bar and fill over 30 seconds
+        // Reset progress bar
         progressBar.style.transition = 'none'; // Stop transition for reset
         progressBar.style.width = '0%'; // Reset the bar to zero width
         setTimeout(() => {
             progressBar.style.transition = 'width 30s linear'; // Smooth transition over 30s
             progressBar.style.width = '100%'; // Animate the progress bar to fill
         }, 100); // Small delay for smooth reset
+
+        // Move to the next quote
+        currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+
     }, 30000); // Change quote every 30 seconds
 }
 
