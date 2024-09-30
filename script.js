@@ -5,44 +5,35 @@ let compliments = [
     "Your creativity is inspiring!",
     "You have a heart of gold.",
     "You're a great listener.",
-    "Your positivity is contagious.",
+    "Your positivity is contagious!",
     "You make a difference in the world.",
     "You’re more powerful than you know.",
     "You bring out the best in people!"
 ];
 
-// Function to generate a random compliment and open modal
-function openComplimentModal() {
+// Function to change compliments every 10 seconds
+function changeCompliment() {
     const randomIndex = Math.floor(Math.random() * compliments.length);
-    const compliment = compliments[randomIndex];
+    const complimentBox = document.getElementById('compliment');
+    complimentBox.style.opacity = '0'; // Fade out
 
-    const complimentText = document.getElementById('complimentText');
-    const complimentSound = document.getElementById('complimentSound');
-
-    complimentText.innerText = compliment; // Set compliment text
-    complimentSound.play(); // Play sound effect
-
-    const modal = document.getElementById('complimentModal');
-    modal.style.display = 'flex'; // Show modal
-
-    // Close modal when clicking outside of it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none'; // Close modal
-        }
-    }
+    setTimeout(() => {
+        complimentBox.innerText = compliments[randomIndex];
+        complimentBox.style.opacity = '1'; // Fade in
+    }, 500); // Wait 500ms before changing the compliment
 }
+
+// Set the interval to change compliments every 10 seconds
+setInterval(changeCompliment, 10000);
+
+// Initially display a compliment
+window.onload = changeCompliment;
 
 // Toggle dark mode and save preference to localStorage
 function toggleDarkMode() {
     const isDarkMode = document.body.classList.toggle('dark-mode');
     document.querySelector('.container').classList.toggle('dark-mode');
-    document.querySelectorAll('.generate-btn, .submit-btn, .donation-btn').forEach(btn => {
-        btn.classList.toggle('dark-mode');
-    });
-    document.querySelector('.modal-content').classList.toggle('dark-mode');
-
-    // Save dark mode preference
+    document.querySelector('.compliment-box').classList.toggle('dark-mode');
     localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
 }
 
@@ -62,13 +53,13 @@ function loadDarkModePreference() {
     if (darkMode === 'enabled') {
         document.body.classList.add('dark-mode');
         document.querySelector('.container').classList.add('dark-mode');
-        document.querySelectorAll('.generate-btn, .submit-btn, .donation-btn').forEach(btn => {
-            btn.classList.add('dark-mode');
-        });
-        document.querySelector('.modal-content').classList.add('dark-mode');
+        document.querySelector('.compliment-box').classList.add('dark-mode');
         document.getElementById('darkModeToggle').checked = true;
     }
 }
 
 // Load dark mode preference when the page loads
-window.onload = loadDarkModePreference;
+window.onload = function() {
+    loadDarkModePreference();
+    changeCompliment(); // Start with a random compliment
+};
