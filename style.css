@@ -111,6 +111,29 @@ h1 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+.comment-list-container {
+    max-height: 150px; /* Limit height */
+    overflow-y: auto;  /* Make it scrollable */
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+ul#commentList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul#commentList li {
+    padding: 8px;
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+}
+
 textarea {
     width: 100%;
     padding: 10px;
@@ -119,6 +142,11 @@ textarea {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
+}
+
+textarea:focus {
+    border-color: #ff33cc;
+    outline: none;
 }
 
 button {
