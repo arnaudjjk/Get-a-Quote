@@ -14,30 +14,26 @@ function changeQuote() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const quoteBox = document.getElementById('quote');
     quoteBox.style.opacity = '0'; // Fade out
-
     setTimeout(() => {
-        quoteBox.innerText = quotes[randomIndex];
+        quoteBox.innerText = quotes[randomIndex]; // Update the quote
         quoteBox.style.opacity = '1'; // Fade in
     }, 500); // Wait 500ms before changing the quote
 }
 
-// Initially display a quote immediately on page load
+// Function to display a quote on page load
 function displayInitialQuote() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const quoteBox = document.getElementById('quote');
-    quoteBox.innerText = quotes[randomIndex];  // Display the first quote immediately
+    quoteBox.innerText = quotes[randomIndex]; // Show the first quote
 }
 
-// Set the interval to change quotes every 10 seconds
-setInterval(changeQuote, 10000);
-
-// On window load, display the initial quote and load dark mode preference
+// Ensure the DOM is loaded before running the script
 window.onload = function() {
-    loadDarkModePreference();  // Load dark mode setting
-    displayInitialQuote();  // Show the first quote immediately
+    displayInitialQuote();  // Display the first quote immediately
+    setInterval(changeQuote, 10000);  // Change quote every 10 seconds
 };
 
-// Toggle dark mode and save preference to localStorage
+// Dark mode toggle function
 function toggleDarkMode() {
     const isDarkMode = document.body.classList.toggle('dark-mode');
     document.querySelector('.container').classList.toggle('dark-mode');
@@ -45,7 +41,7 @@ function toggleDarkMode() {
     localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
 }
 
-// Load dark mode preference from localStorage
+// Load dark mode preference on page load
 function loadDarkModePreference() {
     const darkMode = localStorage.getItem('darkMode');
     if (darkMode === 'enabled') {
@@ -55,3 +51,9 @@ function loadDarkModePreference() {
         document.getElementById('darkModeToggle').checked = true;
     }
 }
+
+window.onload = function() {
+    loadDarkModePreference();
+    displayInitialQuote(); // Show the first quote
+    setInterval(changeQuote, 10000); // Change the quote every 10 seconds
+};
