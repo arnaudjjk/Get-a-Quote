@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliment Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rubik:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Daily Compliment</h1>
+
+        <!-- Generate Compliment Button -->
+        <button class="generate-btn" onclick="openComplimentModal()">Get a Compliment</button>
+
+        <!-- Custom Dark Mode Toggle Button -->
+        <div class="dark-mode-toggle">
+            <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+            <label for="darkModeToggle" class="toggle-label">
+                <span class="toggle-circle"></span>
+            </label>
+            <span class="toggle-text">Dark Mode</span>
+        </div>
+
+        <!-- Compliment Submission -->
+        <div class="submission-section">
+            <h2>Submit Your Own Compliment</h2>
+            <input type="text" id="customCompliment" placeholder="Write your compliment here...">
+            <button class="submit-btn" onclick="submitCompliment()">Submit</button>
+        </div>
+
+        <!-- Donation Button -->
+        <div class="donation-section">
+            <h2>Support Us</h2>
+            <a href="https://paypal.me/NArnau?country.x=CA&locale.x=en_US" target="_blank" class="donation-btn">Donate via PayPal</a>
+        </div>
+    </div>
+
+    <!-- Compliment Modal -->
+    <div id="complimentModal" class="modal">
+        <div class="modal-content">
+            <p id="complimentText">Your compliment will appear here!</p>
+        </div>
+    </div>
+
+    <audio id="complimentSound" src="compliment.mp3" preload="auto"></audio> <!-- Sound effect -->
+    <script src="script.js"></script>
+</body>
+</html>
