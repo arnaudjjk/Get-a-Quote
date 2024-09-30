@@ -27,13 +27,7 @@ function displayInitialQuote() {
     quoteBox.innerText = quotes[randomIndex]; // Show the first quote
 }
 
-// Ensure the DOM is loaded before running the script
-window.onload = function() {
-    displayInitialQuote();  // Display the first quote immediately
-    setInterval(changeQuote, 10000);  // Change quote every 10 seconds
-};
-
-// Dark mode toggle function
+// Toggle dark mode and save preference to localStorage
 function toggleDarkMode() {
     const isDarkMode = document.body.classList.toggle('dark-mode');
     document.querySelector('.container').classList.toggle('dark-mode');
@@ -52,8 +46,9 @@ function loadDarkModePreference() {
     }
 }
 
-window.onload = function() {
-    loadDarkModePreference();
-    displayInitialQuote(); // Show the first quote
-    setInterval(changeQuote, 10000); // Change the quote every 10 seconds
-};
+// Run this function once the DOM is fully loaded
+window.addEventListener('DOMContentLoaded', (event) => {
+    loadDarkModePreference();  // Load dark mode preference
+    displayInitialQuote();     // Show the first quote on page load
+    setInterval(changeQuote, 10000);  // Change quotes every 10 seconds
+});
