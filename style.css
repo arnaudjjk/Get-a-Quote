@@ -59,3 +59,42 @@ html, body {
     background-color: #ff33cc; /* Lighter purple for progress bar */
     transition: width 30s linear;
 }
+
+/* Button Styling */
+.donation-btn {
+    background-color: #ff33cc;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+.donation-btn:hover {
+    background-color: #ff66ff;
+}
+
+/* Comment Section */
+.comment-section {
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent background */
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #ff33cc;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff66ff;
+}
